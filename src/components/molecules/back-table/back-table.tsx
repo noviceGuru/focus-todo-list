@@ -1,21 +1,6 @@
 import TodoRow from "../../atoms/todo-row/todo-row"
 
-export default function () {
-    const todos = [
-        {
-            id: "1",
-            task: "task one",
-        },
-        {
-            id: "2",
-            task: "task two",
-        },
-        {
-            id: "3",
-            task: "task three",
-        },
-    ]
-
+export default function ({todos} : { todos: {id: string, task: string}[]}) {
     return (
         <table className="rounded-xl overflow-hidden">
             <tbody>
