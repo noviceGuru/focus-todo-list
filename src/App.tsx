@@ -1,5 +1,11 @@
+import BackTable from "./components/molecules/back-table/back-table"
+
 function App() {
-    return <div className="bg-pink-400 h-full">Todo list, seeing only one task every time you look at the screen</div>
+    return (
+        <div className="flex justify-center items-center h-full">
+            <BackTable />
+        </div>
+    )
 }
 
 export default App
