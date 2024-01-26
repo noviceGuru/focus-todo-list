@@ -1,6 +1,9 @@
-import { Todo } from "App"
+import AllDoneNote from "components/atoms/all-done-note/all-done-note"
+
 import CircleIcon from "assets/circle.svg"
 import CircleCheckIcon from "assets/circle-check.svg"
+
+import { Todo } from "App"
 
 export default function MainTodo({
     id,
@@ -31,6 +34,6 @@ export default function MainTodo({
             <span>{task}</span>
         </div>
     ) : (
-        <div>All Done!</div>
+        <AllDoneNote/>
     )
 }

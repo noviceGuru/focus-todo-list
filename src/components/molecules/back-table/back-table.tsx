@@ -1,4 +1,5 @@
 import { Todo } from "App"
+import AllDoneNote from "components/atoms/all-done-note/all-done-note";
 import TodoRow from "components/atoms/todo-row/todo-row"
 
 export default function ({
@@ -17,6 +18,6 @@ export default function ({
             </tbody>
         </table>
     ) : (
-        <div className="flex justify-center items-center h-24 w-1/3 rounded-2xl text-white font-bold bg-slate-400">All Done!</div>
+        <AllDoneNote className="flex justify-center items-center h-24 w-1/3 rounded-2xl text-white font-bold bg-slate-400"/>
     )
 }
