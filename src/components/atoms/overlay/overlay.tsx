@@ -21,13 +21,13 @@ export default function Overlay({
         show && (
             <div
                 id="background"
-                className="fixed z-20 inset-0 bg-gray-400 bg-opacity-50 flex items-center justify-center"
+                className="fixed z-20 inset-0 bg-gray-400 bg-opacity-50 flex items-center justify-center cursor-pointer [&>*]:cursor-default"
                 onClick={closeOnBackdropClick}
             >
                 <button onClick={() => setShow(false)} className="absolute top-1/4">
                     <img
                         src={CloseIcon}
-                        className="h-8 -rotate-180 hover:rotate-180 transition-all ease-out"
+                        className="h-8 -rotate-180 hover:rotate-180 transition-all ease-out cursor-pointer"
                     />
                 </button>
                 {children}
