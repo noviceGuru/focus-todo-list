@@ -42,7 +42,7 @@ function App() {
             <img
                 src={show ? OpenEnvelope : ClosedEnveloper}
                 onClick={() => setShow(true)}
-                className="absolute h-12 bottom-14 md:bottom-36 cursor-pointer"
+                className="absolute h-12 bottom-14 md:bottom-36 cursor-pointer hover:brightness-200"
             />
         </div>
     )

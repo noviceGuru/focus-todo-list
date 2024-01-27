@@ -1,5 +1,7 @@
 import { ReactNode } from "react"
 
+import CloseIcon from "assets/close-circle.svg"
+
 export default function Overlay({
     show,
     setShow,
@@ -22,6 +24,12 @@ export default function Overlay({
                 className="fixed z-20 inset-0 bg-gray-400 bg-opacity-50 flex items-center justify-center"
                 onClick={closeOnBackdropClick}
             >
+                <button onClick={() => setShow(false)} className="absolute top-1/4">
+                    <img
+                        src={CloseIcon}
+                        className="h-8 -rotate-180 hover:rotate-180 transition-all ease-out"
+                    />
+                </button>
                 {children}
             </div>
         )
