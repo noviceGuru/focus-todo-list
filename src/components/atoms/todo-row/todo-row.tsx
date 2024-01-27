@@ -1,5 +1,5 @@
-import { useState } from
- "react"
+import UseTodoRow from "./use-todo-row"
+
 import { Todo } from "App"
 
 export default function TodoRow({
@@ -15,33 +15,12 @@ export default function TodoRow({
     setEditingKey: React.Dispatch<React.SetStateAction<string>>
     isEditing: boolean
 }) {
-    const [inputValue, setInputValue] = useState<string>(task)
-
-    const deleteRow = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.preventDefault()
-        setTodos(oldTodos => oldTodos.filter(el => el.id !== id))
-    }
-
-    const saveTask = (e: React.FocusEvent<Element>) => {
-        e.preventDefault()
-        setTodos(oldTodos => {
-            let newTodos = structuredClone(oldTodos).map(el => {
-                if (el.id === id) {
-                    return ({
-                        id: id,
-                        task: inputValue
-                    })
-                }else{
-                    return ({
-                        id: el.id,
-                        task: el.task
-                    })
-                }
-            })
-            return newTodos
-        })
-        setEditingKey("")
-    }
+    const { saveTaskOnBlur, saveOnEnter, deleteRow, setInputValue, inputValue } = UseTodoRow(
+        task,
+        setTodos,
+        setEditingKey,
+        id
+    )
 
     return (
         <tr className="w-2/3 bg-purple-300 border-y-2">
@@ -49,7 +28,8 @@ export default function TodoRow({
                 <td>
                     <input
                         className="w-full p-2"
-                        onBlur={saveTask}
+                        onBlur={saveTaskOnBlur}
+                        onKeyUp={saveOnEnter}
                         autoFocus
                         onChange={e => setInputValue(e.target.value)}
                         value={inputValue}

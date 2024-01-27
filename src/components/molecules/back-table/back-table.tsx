@@ -16,16 +16,22 @@ export default function ({
     const [editingKey, setEditingKey] = useState<string>("")
 
     const addTodoInput = () => {
+        const newId = new Date().toString()
         setTodos(oldTodos => {
             const newTodos = structuredClone(oldTodos)
-            newTodos.push({ id: new Date().toString(), task: "4th task" })
+            newTodos.push({ id: newId, task: "" })
             return newTodos
         })
+        setEditingKey(newId)
     }
 
     if (todos.length === 0) {
-        return (
-            <AllDoneNote className="flex justify-center items-center h-24 w-1/3 rounded-2xl text-white font-bold bg-slate-400" />
+        return (<div className="flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400">
+            <button className="self-end" onClick={addTodoInput}>
+                <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
+            </button>
+            <AllDoneNote className="flex justify-center items-center h-24  rounded-2xl text-white font-bold bg-slate-400" />
+        </div>
         )
     }
 
