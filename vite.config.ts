@@ -11,5 +11,6 @@ export default defineConfig({
         "assets": path.resolve(__dirname, "src/assets"),
         "features": path.resolve(__dirname, "src/features"),
     },
-},
+  },
+  base: '/focus-todo-list'
 })
