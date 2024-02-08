@@ -1,6 +1,7 @@
 import UseTodoRow from "./use-todo-row"
 
 import { Todo } from "App"
+import ClearOne from 'assets/clear-one.svg'
 
 export default function TodoRow({
     id,
@@ -48,7 +49,7 @@ export default function TodoRow({
                             onClick={deleteRow}
                             className="bg-pink-300 p-1 rounded-full opacity-0 hover:opacity-100"
                         >
-                            X
+                            <img src={ClearOne} className="w-8" title="Delete Task"/>
                         </button>
                     </div>
                 </>
