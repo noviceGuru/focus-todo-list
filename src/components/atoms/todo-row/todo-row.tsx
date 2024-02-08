@@ -37,7 +37,7 @@ export default function TodoRow({
             ) : (
                 <>
                     <div
-                        className="flex items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1"
+                        className="flex items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1 transition-colors"
                         onClick={() => {
                             setEditingKey(id)
                         }}

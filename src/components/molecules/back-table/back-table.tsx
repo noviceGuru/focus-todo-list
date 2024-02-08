@@ -42,7 +42,7 @@ export default function ({
     return (
         <div className={containersClasses}>
             <button className="self-end" onClick={addTodoInput}>
-                <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
+                <img src={AddSquareIcon} className="h-8 hover:brightness-200 transition-all duration-300" />
             </button>
             <div className="rounded-xl overflow-hidden table-auto">
                     <ReactSortable
