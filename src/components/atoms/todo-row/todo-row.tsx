@@ -23,7 +23,7 @@ export default function TodoRow({
     )
 
     return (
-        <div className="w-80 bg-purple-300 border-y-2">
+        <div className="bg-purple-300 border-y-2">
             {isEditing ? (
                 <input
                     className="p-2 w-full focus:outline-none"
@@ -36,12 +36,12 @@ export default function TodoRow({
             ) : (
                 <>
                     <div
-                        className="flex justify-between p-2 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1"
+                        className="flex items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1"
                         onClick={() => {
                             setEditingKey(id)
                         }}
                     >
-                        <span title={task} className="truncate">
+                        <span title={task} className="truncate pl-1">
                             {task}
                         </span>
                         <button

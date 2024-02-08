@@ -26,9 +26,11 @@ export default function ({
         setEditingKey(newId)
     }
 
+    const containersClasses = "w-3/4 flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400"
+    
     if (todos.length === 0) {
         return (
-            <div className="flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400">
+            <div className={containersClasses}>
                 <button className="self-end" onClick={addTodoInput}>
                     <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
                 </button>
@@ -38,7 +40,7 @@ export default function ({
     }
 
     return (
-        <div className="flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400">
+        <div className={containersClasses}>
             <button className="self-end" onClick={addTodoInput}>
                 <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
             </button>
