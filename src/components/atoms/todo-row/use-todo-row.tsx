@@ -33,9 +33,23 @@ export default function UseTodoRow(
         setEditingKey("")
     }
 
-    const saveOnEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const onKeyboardAction = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             handleSaveTask()
+        }
+
+        if (e.key === "Escape") {
+            setTodos(oldTodos => {
+                if(oldTodos[oldTodos.length-1].task.length === 0){
+                    let newTodos = structuredClone(oldTodos)
+                    newTodos.pop()
+                    return newTodos
+                } else {
+                    return oldTodos
+                }
+            })
+
+            setEditingKey("")
         }
     }
 
@@ -45,5 +59,5 @@ export default function UseTodoRow(
         handleSaveTask()
     }
 
-    return { saveTaskOnBlur, saveOnEnter, deleteRow, setInputValue, inputValue }
+    return { saveTaskOnBlur, onKeyboardAction, deleteRow, setInputValue, inputValue }
 }

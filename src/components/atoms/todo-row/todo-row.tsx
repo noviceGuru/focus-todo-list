@@ -16,7 +16,7 @@ export default function TodoRow({
     setEditingKey: React.Dispatch<React.SetStateAction<string>>
     isEditing: boolean
 }) {
-    const { saveTaskOnBlur, saveOnEnter, deleteRow, setInputValue, inputValue } = UseTodoRow(
+    const { saveTaskOnBlur, onKeyboardAction, deleteRow, setInputValue, inputValue } = UseTodoRow(
         task,
         setTodos,
         setEditingKey,
@@ -24,12 +24,12 @@ export default function TodoRow({
     )
 
     return (
-        <div className="bg-purple-300 border-y-2">
+        <div className=" border-y-2 h-12">
             {isEditing ? (
                 <input
-                    className="p-2 w-full focus:outline-none"
+                    className="px-2 py-3 w-full h-full focus:outline-none"
                     onBlur={saveTaskOnBlur}
-                    onKeyUp={saveOnEnter}
+                    onKeyUp={onKeyboardAction}
                     autoFocus
                     onChange={e => setInputValue(e.target.value)}
                     value={inputValue}
@@ -37,7 +37,7 @@ export default function TodoRow({
             ) : (
                 <>
                     <div
-                        className="flex items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1 transition-colors"
+                        className="flex h-full items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1 transition-colors"
                         onClick={() => {
                             setEditingKey(id)
                         }}

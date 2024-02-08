@@ -1,8 +1,8 @@
-import { ReactNode } from "react"
+import { ReactNode, memo } from "react"
 
 import CloseIcon from "assets/close-circle.svg"
 
-export default function Overlay({
+export default memo(function Overlay({
     show,
     setShow,
     children
@@ -34,4 +34,4 @@ export default function Overlay({
             </div>
         )
     )
-}
+})
