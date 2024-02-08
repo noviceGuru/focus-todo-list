@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ReactSortable } from "react-sortablejs"
 import { Todo } from "App"
 
 import AllDoneNote from "components/atoms/all-done-note/all-done-note"
@@ -26,12 +27,13 @@ export default function ({
     }
 
     if (todos.length === 0) {
-        return (<div className="flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400">
-            <button className="self-end" onClick={addTodoInput}>
-                <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
-            </button>
-            <AllDoneNote className="flex justify-center items-center h-24  rounded-2xl text-white font-bold bg-slate-400" />
-        </div>
+        return (
+            <div className="flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400">
+                <button className="self-end" onClick={addTodoInput}>
+                    <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
+                </button>
+                <AllDoneNote className="flex justify-center items-center h-24  rounded-2xl text-white font-bold bg-slate-400" />
+            </div>
         )
     }
 
@@ -40,20 +42,25 @@ export default function ({
             <button className="self-end" onClick={addTodoInput}>
                 <img src={AddSquareIcon} className="h-8 hover:brightness-200" />
             </button>
-            <table className="rounded-xl overflow-hidden table-auto">
-                <tbody>
-                    {todos.map(({ id, task }) => (
-                        <TodoRow
-                            id={id}
-                            task={task}
-                            setTodos={setTodos}
-                            key={id}
-                            setEditingKey={setEditingKey}
-                            isEditing={editingKey === id }
-                        />
-                    ))}
-                </tbody>
-            </table>
+            <div className="rounded-xl overflow-hidden table-auto">
+                    <ReactSortable
+                        list={todos}
+                        setList={setTodos}
+                        easing="ease-out"
+                        animation={200}
+                    >
+                        {todos.map(({ id, task }) => (
+                            <TodoRow
+                                id={id}
+                                task={task}
+                                setTodos={setTodos}
+                                key={id}
+                                setEditingKey={setEditingKey}
+                                isEditing={editingKey === id}
+                            />
+                        ))}
+                    </ReactSortable>
+            </div>
         </div>
     )
 }

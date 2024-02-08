@@ -23,27 +23,25 @@ export default function TodoRow({
     )
 
     return (
-        <tr className="w-2/3 bg-purple-300 border-y-2">
+        <div className="w-80 bg-purple-300 border-y-2">
             {isEditing ? (
-                <td>
-                    <input
-                        className="w-full p-2"
-                        onBlur={saveTaskOnBlur}
-                        onKeyUp={saveOnEnter}
-                        autoFocus
-                        onChange={e => setInputValue(e.target.value)}
-                        value={inputValue}
-                    />
-                </td>
+                <input
+                    className="p-2 w-full focus:outline-none"
+                    onBlur={saveTaskOnBlur}
+                    onKeyUp={saveOnEnter}
+                    autoFocus
+                    onChange={e => setInputValue(e.target.value)}
+                    value={inputValue}
+                />
             ) : (
                 <>
-                    <td
-                        className="w-80 flex justify-between p-2 bg-lime-300 cursor-pointer hover:bg-slate-300"
+                    <div
+                        className="flex justify-between p-2 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1"
                         onClick={() => {
                             setEditingKey(id)
                         }}
                     >
-                        <span title={task} className="flex items-center truncate">
+                        <span title={task} className="truncate">
                             {task}
                         </span>
                         <button
@@ -52,9 +50,9 @@ export default function TodoRow({
                         >
                             X
                         </button>
-                    </td>
+                    </div>
                 </>
             )}
-        </tr>
+        </div>
     )
 }
