@@ -1,4 +1,5 @@
 import UseTodoRow from "./use-todo-row"
+import isMobile from "is-mobile"
 
 import { Todo } from "use-app"
 import ClearOne from 'assets/clear-one.svg'
@@ -47,7 +48,7 @@ export default function TodoRow({
                         </span>
                         <button
                             onClick={deleteRow}
-                            className="bg-pink-300 p-1 rounded-full opacity-0 hover:opacity-100"
+                            className={`bg-pink-300 p-1 rounded-full ${isMobile() ? "" : "opacity-0" } hover:opacity-100`}
                         >
                             <img src={ClearOne} className="w-8" title="Delete Task"/>
                         </button>
