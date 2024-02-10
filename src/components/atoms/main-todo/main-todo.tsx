@@ -3,7 +3,7 @@ import AllDoneNote from "components/atoms/all-done-note/all-done-note"
 import CircleIcon from "assets/circle.svg"
 import CircleCheckIcon from "assets/circle-check.svg"
 
-import { Todo } from "App"
+import { Todo } from "use-app"
 
 export default function MainTodo({
     id,

@@ -1,6 +1,6 @@
 import UseTodoRow from "./use-todo-row"
 
-import { Todo } from "App"
+import { Todo } from "use-app"
 import ClearOne from 'assets/clear-one.svg'
 
 export default function TodoRow({

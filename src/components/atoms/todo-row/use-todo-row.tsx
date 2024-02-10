@@ -1,4 +1,4 @@
-import { Todo } from "App"
+import { Todo } from "use-app"
 import { useState } from "react"
 
 export default function UseTodoRow(

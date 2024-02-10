@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { ReactSortable } from "react-sortablejs"
-import { Todo } from "App"
+import { Todo } from "use-app"
 
 import AllDoneNote from "components/atoms/all-done-note/all-done-note"
 import TodoRow from "components/atoms/todo-row/todo-row"
