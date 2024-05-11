@@ -12,9 +12,7 @@ export default function useApp() {
     const [todos, setTodos] = useState<Todo[]>([])
 
     useEffect(() => {
-        if (todos.length > 0) {
-            localStorage.setItem(focusTodos, JSON.stringify(todos))
-        }
+        localStorage.setItem(focusTodos, JSON.stringify(todos))
     }, [todos])
 
     useEffect(() => {
