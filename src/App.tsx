@@ -3,9 +3,7 @@ import useApp from "./use-app"
 import MainTodo from "components/atoms/main-todo/main-todo"
 import Overlay from "components/atoms/overlay/overlay"
 import BackTable from "components/molecules/back-table/back-table"
-
-import OpenEnvelope from "assets/open-envelope.svg"
-import ClosedEnveloper from "assets/closed-envelope.svg"
+import EnvalopeIcon from "components/atoms/envelope-icon/envelope-icon"
 
 function App() {
     const { show, setShow, todos, setTodos } = useApp()
@@ -16,11 +14,7 @@ function App() {
             <Overlay show={show} setShow={setShow}>
                 <BackTable todos={todos} setTodos={setTodos} />
             </Overlay>
-            <img
-                src={show ? OpenEnvelope : ClosedEnveloper}
-                onClick={() => setShow(true)}
-                className="absolute h-12 bottom-14 md:bottom-36 cursor-pointer hover:brightness-200"
-            />
+            <EnvalopeIcon onClick={() => setShow(true)} show={show} />
         </div>
     )
 }

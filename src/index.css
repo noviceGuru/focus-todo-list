@@ -4,5 +4,5 @@
 
 #root{
   @apply h-[100dvh];
-  @apply bg-blue-200;
+  @apply bg-gray-600;
 }
