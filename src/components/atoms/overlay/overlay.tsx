@@ -23,6 +23,7 @@ export default memo(function Overlay({
                 id="background"
                 className="fixed z-20 inset-0 bg-gray-400 bg-opacity-50 flex items-center justify-center cursor-pointer [&>*]:cursor-default"
                 onClick={closeOnBackdropClick}
+                data-testid="pop-up-dialog"
             >
                 <button onClick={() => setShow(false)} className="absolute top-1/4">
                     <img

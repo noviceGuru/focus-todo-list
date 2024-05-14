@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`onClick on the envelope, the overlay opens, matching the snapshot. 1`] = `
+<div
+  class="fixed z-20 inset-0 bg-gray-400 bg-opacity-50 flex items-center justify-center cursor-pointer [&>*]:cursor-default"
+  data-testid="pop-up-dialog"
+  id="background"
+>
+  <button
+    class="absolute top-1/4"
+  >
+    <img
+      class="h-8 -rotate-180 hover:rotate-180 transition-all ease-out cursor-pointer"
+      src="/focus-todo-list/src/assets/close-circle.svg"
+    />
+  </button>
+  <div
+    class="w-3/4 flex flex-col gap-4 border-2 p-8 rounded-lg bg-slate-400"
+  >
+    <button
+      class="self-end"
+    >
+      <img
+        class="h-8 hover:brightness-200"
+        src="/focus-todo-list/src/assets/add-square.svg"
+      />
+    </button>
+    <div
+      class="flex justify-center items-center h-24  rounded-2xl text-white font-bold bg-slate-400"
+    >
+      All Done!
+    </div>
+  </div>
+</div>
+`;

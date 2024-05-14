@@ -1,4 +1,4 @@
-import useApp from "./use-app"
+import useApp from "../use-app"
 
 import MainTodo from "components/atoms/main-todo/main-todo"
 import Overlay from "components/atoms/overlay/overlay"
