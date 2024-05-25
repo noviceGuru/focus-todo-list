@@ -9,7 +9,7 @@ const focusTodos = "focus-todos"
 export default function useApp() {
     const [show, setShow] = useState<boolean>(false)
 
-    const [todos, setTodos] = useState<Todo[]>([])
+    const [todos, setTodos] = useState<Todo[]>(JSON.parse(localStorage.getItem(focusTodos) || "[]"))
 
     useEffect(() => {
         localStorage.setItem(focusTodos, JSON.stringify(todos))
