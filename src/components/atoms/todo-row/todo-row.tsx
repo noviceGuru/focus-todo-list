@@ -34,6 +34,7 @@ export default function TodoRow({
                     autoFocus
                     onChange={e => setInputValue(e.target.value)}
                     value={inputValue}
+                    data-testid="new-row-input"
                 />
             ) : (
                 <>
