@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`The table shows the todos that it's been given, and matches the snapshot 1`] = `
+<div
+  class="rounded-xl overflow-hidden table-auto"
+  data-testid="table"
+>
+  <div>
+    <div
+      class=" border-y-2 h-12"
+    >
+      <div
+        class="flex h-full items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1 transition-colors"
+      >
+        <span
+          class="truncate pl-1"
+          title="Task number one"
+        >
+          Task number one
+        </span>
+        <button
+          class="bg-pink-300 p-1 rounded-full opacity-0 hover:opacity-100"
+        >
+          <img
+            class="w-8"
+            src="/focus-todo-list/src/assets/clear-one.svg"
+            title="Delete Task"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class=" border-y-2 h-12"
+    >
+      <div
+        class="flex h-full items-center justify-between p-1 bg-lime-300 cursor-pointer hover:bg-slate-300 line-clamp-1 transition-colors"
+      >
+        <span
+          class="truncate pl-1"
+          title="Task number two"
+        >
+          Task number two
+        </span>
+        <button
+          class="bg-pink-300 p-1 rounded-full opacity-0 hover:opacity-100"
+        >
+          <img
+            class="w-8"
+            src="/focus-todo-list/src/assets/clear-one.svg"
+            title="Delete Task"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -80,7 +80,7 @@ export default function ({
                     </button>
                 }
             </div>
-            <div className="rounded-xl overflow-hidden table-auto">
+            <div className="rounded-xl overflow-hidden table-auto" data-testid="table">
                 <ReactSortable list={todos} setList={setTodos} easing="ease-out" animation={200}>
                     {todos.map(({ id, task }) => (
                         <TodoRow
